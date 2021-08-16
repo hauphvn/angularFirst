@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-header">
+    <ng-container [ngTemplateOutlet]="counterTemplate"></ng-container>
+  </div>
+  <div class="card-body">
+    <ng-container [ngTemplateOutlet]="counterTemplate"></ng-container>
+  </div>
+  <div class="card-footer">
+    <ng-container [ngTemplateOutlet]="counterTemplate"></ng-container>
+  </div>
+</div>
+<ng-template #counterTemplate>
+  <div><span>This is counter: {{counter}} </span>(items)</div>
+</ng-template>
+<hr>
+<ng-template #btnAppCustomTemplate>
+  <div><span>This is btn custom from app:</span></div>
+  <button class="btn btn-danger">Btn from app</button>
+</ng-template>
+<app-custom-btn [inputBtnTemplate]="btnAppCustomTemplate"></app-custom-btn>
+<hr>
+<h3>Practice template context</h3>
+<ng-template
+  #customTemplateContext
+  let-label='label'
+  let-className='className'
+  let-icon='icon'>
+  <button
+    [ngClass]="['btn',className ? className : '']">
+    {{label}}
+    <i
+      class="fa {{icon}}"
+      *ngIf="icon"></i>
+  </button>
+</ng-template>
+<ng-container
+  [ngTemplateOutletContext]="{label: 'Click me',className:'btn-success', icon:'fa-remove'}"
+  [ngTemplateOutlet]="customTemplateContext">
+</ng-container>
+<ng-container
+  [ngTemplateOutletContext]="{label: 'Play',className:'btn-info', icon:null}"
+  [ngTemplateOutlet]="customTemplateContext">
+</ng-container>

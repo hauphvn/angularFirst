@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-sm-12">
+    <ng-container *ngTemplateOutlet="inputBtnTemplate || btnTemplateDefault"></ng-container>
+  </div>
+</div>
+
+<ng-template #btnTemplateDefault>
+  <button class="btn btn-info">This is btn default</button>
+</ng-template>
