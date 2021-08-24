@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">App Message</div>
+        <div class="card-body">
+          <div class="alert alert-primary" role="alert">
+            Message: <span>{{message}}</span>
+          </div>
+          <button
+            (click)="onGetMsg()"
+            class="btn btn-success">Get msg</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <app-child-message></app-child-message>
+    </div>
+  </div>
+</div>
