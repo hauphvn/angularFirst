@@ -1,6 +1,12 @@
-<app-header></app-header>
+<app-header
+  (outNavType) = "changeNavType($event)"
+></app-header>
 <div class="container">
-  <app-recipes></app-recipes>
-  <app-shopping-list></app-shopping-list>
+  <app-recipes
+    *ngIf="navType === 'recipe'"
+  ></app-recipes>
+  <app-shopping-list
+    *ngIf="navType === 'shopping-list'"
+  ></app-shopping-list>
 </div>
 

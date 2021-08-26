@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'kayFoodBook';
   navType = 'recipe';
+
+  changeNavType(event: string) {
+    this.navType = event;
+  }
 }
