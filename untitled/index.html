@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h3>
+    Bài test 1. Tính tổng 2 số
+</h3>
+<p>
+    Sửa hàm <b>calculate(a, b)</b> sao cho kết quả trả về là tổng của 2 số a và b chuyền vào.<br>
+    VD: kết quả của calculate(3, 4) là 7, kết quả của calculate(5, -12) là -7
+    <br>
+    <span id="result1"></span>
+</p>
+
+<h3>
+    Bài test 2. Tìm các phần tử chung của 2 arrays
+</h3>
+<p>
+    Sửa hàm intersection(arr1, arr2) sao cho kết quả trả về là một array bao gồm tất cả các phần tử xuất hiện ở cả 2 array arr1 và arr2
+    <br>
+    VD: <br>
+    <b>Inputs: </b><br>
+    arr1: [1, 2, 3, 5, 7, 9]<br>
+    arr2: [5, 6, 7]
+    <br>
+    <br><b>Kết quả:</b> [5, 7]
+    <br><span id="result2"></span>
+</p>
+
+<h3>
+    Bài test 3. Group các phần tử trong mảng
+</h3>
+<p>
+    Sửa hàm group(cars) sao cho kết quả trả về là một array bao gồm các object chứa array các cars có brand giống nhau và có brand là tên brand giống nhau đó
+    <br>
+    VD1: <br>
+    <b>Inputs: </b><br>
+    [<br>
+    <span style='margin-left: 15px'></span>{name: 'Innova', price: 5000, brand: 'Toyota'}, <br>
+    <span style='margin-left: 15px'></span>{name: 'Civic', price: 5200, brand: 'Honda'}, <br>
+    <span style='margin-left: 15px'></span>{name: 'Fortuner', price: 7000, brand: 'Toyota'}, <br>
+    <span style='margin-left: 15px'></span>{name: 'City', price: 9000, brand: 'Honda'}<br>
+    ]
+    <br>
+    <br><b>Kết quả:</b> <br>
+    [<br>
+    <span style='margin-left: 15px'></span>{<br>
+    <span style='margin-left: 30px'></span>brand: 'Toyota', <br>
+    <span style='margin-left: 30px'></span>cars: [<br>
+    <span style='margin-left: 45px'></span>{name: 'Innova', price: 5000, brand: 'Toyota'},<br>
+    <span style='margin-left: 45px'></span>{name: 'Fortuner', price: 7000, brand: 'Toyota'}<br>
+    <span style='margin-left: 30px'></span>]<br>
+    <span style='margin-left: 15px'></span>},<br>
+    <span style='margin-left: 15px'></span>{<br>
+    <span style='margin-left: 30px'></span>brand: 'Honda', <br>
+    <span style='margin-left: 30px'></span>cars: [<br>
+    <span style='margin-left: 45px'></span>{name: 'Civic', price: 5200, brand: 'Honda'}, <br>
+    <span style='margin-left: 45px'></span>{name: 'City', price: 9000, brand: 'Honda'}<br>
+    <span style='margin-left: 30px'></span>]<br>
+    <span style='margin-left: 15px'></span>}<br>
+    ]<br>
+    <br>
+    VD2: <br>
+    <b>Inputs: </b><br>
+    [<br>
+    <span style='margin-left: 15px'></span>{name: 'Innova', price: 5000, brand: 'Toyota'}, <br>
+    <span style='margin-left: 15px'></span>{name: 'CX6', price: 2000, brand: 'Mazda'}, <br>
+    <span style='margin-left: 15px'></span>{name: 'Fortuner', price: 7000, brand: 'Toyota'}, <br>
+    <span style='margin-left: 15px'></span>{name: 'Camry', price: 19000, brand: 'Toyota'}<br>
+    ]
+    <br>
+    <br><b>Kết quả:</b> <br>
+    [<br>
+    <span style='margin-left: 15px'></span>{<br>
+    <span style='margin-left: 30px'></span>brand: 'Toyota', <br>
+    <span style='margin-left: 30px'></span>cars: [<br>
+    <span style='margin-left: 45px'></span>{name: 'Innova', price: 5000, brand: 'Toyota'},<br>
+    <span style='margin-left: 45px'></span>{name: 'Fortuner', price: 7000, brand: 'Toyota'}<br>
+    <span style='margin-left: 45px'></span>{name: 'Camry', price: 19000, brand: 'Toyota'}<br>
+    <span style='margin-left: 30px'></span>]<br>
+    <span style='margin-left: 15px'></span>},<br>
+    <span style='margin-left: 15px'></span>{<br>
+    <span style='margin-left: 30px'></span>brand: 'Mazda', <br>
+    <span style='margin-left: 30px'></span>cars: [<br>
+    <span style='margin-left: 45px'></span>{name: 'CX6', price: 2000, brand: 'Mazda'}<br>
+    <span style='margin-left: 30px'></span>]<br>
+    <span style='margin-left: 15px'></span>}<br>
+    ]<br>
+    <br>
+    <br><span id="result3"></span>
+</p>
+
+<h3>
+    Bài test 4. Tính ra ngày tiếp theo của một ngày.
+</h3>
+<p>
+    Sửa hàm getNextDay(day, month, year) sao cho kết quả trả về là một chuỗi string thể hiện ngày tiếp theo của ngày chuyền vào. VD kết quả trả về của hàm getNextDay(28, 2, 2021) sẽ là "1/3/2021".
+    <br>
+    <br><span id="result4"></span>
+</p>
+
+<h3>
+    Bài test 5. Đọc số có tối đa 2 chữ số
+</h3>
+<p>
+    Sửa hàm readNumber(number) sao cho kết quả trả về là một đoạn string thể hiện cách đọc của số chuyền vào đó trong tiếng Việt, không cần quan tâm trường hợp số âm và số nhiều hơn 2 chữ sô. <br>
+    Ví dụ: 19 đọc là "mười chín", 11 đọc là "mười một", 21 đọc là "hai mươi mốt", 9 đọc là "chín", 5 đọc là "năm", 55 đọc là "năm mươi lăm"
+    <br>
+    <br><span id="result5"></span>
+</p>
+
+<h3>
+    Bài test 6. Tạo ra 1 array các chữ số từ số startNum chuyền vào đến số endNum chuyền vào.
+</h3>
+<p>
+    Sửa hàm buildArray(startNum, endNum) sao cho kết quả trả về là một array chứa tất cả các số từ số startNum đến số endNum. <br>
+<ul>
+    <li>Hàm này phải là hàm đệ quy, nghĩa là bên trong hàm này phải gọi lại chính hàm này.</li>
+    <li>Không được sử dụng các cú pháp loop như for, while hay các hàm nâng cao của loop như forEach, map, filter, reduce.</li>
+</ul>
+Ví dụ: buildArray(1, 5) phải trả về [1, 2, 3, 4, 5], buildArray(4,4) phải trả về [4]
+<br>
+<br><span id="result6"></span>
+</p>
+
+<h3>
+    Bài test 7. Kiểm tra 2 object bất kỳ trong 1 mảng có mối liên hệ với nhau.
+</h3>
+<p>
+    Sửa hàm checkPath(arr, a, b) trong đó arr chuyền vào là 1 array có dạng như sau: <br>
+    [<br>
+    <span style='margin-left: 15px'></span>{id: 1, connectedTo: [7, 3]}, <br>
+    <span style='margin-left: 15px'></span>{id: 2, connectedTo: [8, 9]}, <br>
+    <span style='margin-left: 15px'></span>{id: 3, connectedTo: [1, 4]}, <br>
+    <span style='margin-left: 15px'></span>{id: 4, connectedTo: [7, 3]},<br>
+    <span style='margin-left: 15px'></span>{id: 5, connectedTo: [7]},<br>
+    <span style='margin-left: 15px'></span>{id: 6, connectedTo: [2]},<br>
+    <span style='margin-left: 15px'></span>{id: 7, connectedTo: [1, 4, 5]},<br>
+    <span style='margin-left: 15px'></span>{id: 8, connectedTo: [2, 9]},<br>
+    <span style='margin-left: 15px'></span>{id: 9, connectedTo: [2, 8]}<br>
+    ]<br>
+    a và b là 2 id của 2 object bất kỳ trong array trên.
+    <br>Kết quả trả về là true nếu từ 2 objects này, ta có thể tìm được các mối liên hệ trực tiếp hoặc gián tiếp thông qua các arr connectedTo của từng object.
+    <br> Mối quan hệ trực tiếp: Nếu object A có connectedTo chứa id của object B, 2 objects này được coi là có mối quan hệ trực tiếp
+    <br> Mối quan hệ gián tiếp: Nếu object A có mối quan hệ trực tiếp đến một hoặc nhiều object khác và các object khác này lại có mối quan hệ trực tiếp đến một hoặc nhiều object khác và cứ tiếp tục như vậy đến khi có một object có mối liên hệ trực tiếp tới object B.
+    <br> Ví dụ 1: checkPath(arr, 1, 5) sẽ trả về true vì từ object 1, ta thấy có mối liên hệ trực tiếp với object 7 và object 3, trong đó object 7 có mối liên hệ trực tiếp với object 5, vậy object 1 và object 5 có mối liên hệ, kết quả là true
+    <br> Ví dụ 2: checkPath(arr, 2, 8) sẽ trả về true vì từ object 2, ta thấy có mối liên hệ trực tiếp với object 8
+    <br> Ví dụ 3: checkPath(arr, 5, 2) sẽ trả về false vì từ object 5, ta không thấy có mối liên hệ trực tiếp cũng như gián tiếp đến object 2.
+    <br><span id="result7"></span>
+</p>
+<script type="application/javascript" src="jquery-3.6.0.min.js"></script>
+<script type="application/javascript" src="myjs.js"></script>
+</body>
+</html>

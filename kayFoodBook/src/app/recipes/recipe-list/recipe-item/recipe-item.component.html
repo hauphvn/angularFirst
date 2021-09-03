@@ -1,4 +1,6 @@
-<a *ngFor="let recipe of recipes"
+<a
+  (click)="onSelected(recipe)"
+  *ngFor="let recipe of recipes"
   href="#"
   class="list-group-item
   clearfix">
