@@ -1,0 +1,7 @@
+<h1>user component</h1>
+<div *ngIf="user">
+  <p>id: {{user.id}}</p>
+  <p>name: {{user.name}}</p>
+</div>
+<a [routerLink]="['/users',12,'cafe']">load cafe user</a>
+

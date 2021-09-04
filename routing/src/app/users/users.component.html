@@ -3,11 +3,12 @@
     <div class="list-group">
       <a
         class="list-group-item"
-        href="#">user name
+        [routerLink]="['/users',1,'user1']">user name
       </a>
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
-    <app-users></app-users>
+<!--    <app-user></app-user>-->
+    <router-outlet></router-outlet>
   </div>
 </div>

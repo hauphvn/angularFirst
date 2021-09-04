@@ -1,1 +1,27 @@
-<p>servers works!</p>
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a href="#" class="list-group-item"> server name</a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+<!--    <a routerLink="servers">load servers a tag</a>-->
+<!--    <button (click)="onLoadServer()">load server btn</button>-->
+<!--    <app-edit-server></app-edit-server>-->
+<!--    <hr>-->
+   <router-outlet></router-outlet>
+  </div>
+  <div *ngIf="editing" class="col-xs-12 col-sm-4">
+    <p>Id: {{editingId}}</p>
+    <p>allowEdit: {{allowEdit}}</p>
+    <p>fragment:</p>
+  </div>
+
+  <div class="col-xs-12 col-sm-4">
+    <div
+      *ngFor="let server of serverList"
+      class="list-group">
+      <a [routerLink]="['/servers', server.id, server.name]" class="list-group-item"> {{server.name}}</a>
+    </div>
+  </div>
+</div>
