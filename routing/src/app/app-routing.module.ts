@@ -10,6 +10,7 @@ import {ServerComponent} from "./servers/server/server.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {AuthGuardService} from "./auth-guard-serivce";
 import {CanDeactivateGuard} from "./can-deactive-guard.service";
+import {ErrorPageComponent} from "./error-page/error-page.component";
 
 
 const appRoutes: Routes = [
@@ -56,7 +57,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'not-found',
-    component: PageNotFoundComponent
+    // component: PageNotFoundComponent
+    component: ErrorPageComponent,
+    data: {message: '404 Error!'}
   }
 ];
 
