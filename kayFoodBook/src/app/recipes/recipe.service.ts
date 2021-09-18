@@ -6,6 +6,7 @@ import {ShoppingListService} from "../shopping-list/shopping-list.service";
 @Injectable()
 export class RecipeService {
   private recipes: RecipeModel[] = [new RecipeModel(
+    1,
     'Com Chien',
     'Com chien ga nuoc mam',
     'http://imgs.vietnamnet.vn/Images/2016/12/09/08/20161209085123-ga3.jpg',
@@ -14,6 +15,7 @@ export class RecipeService {
       new IngredientModel("Nuoc mam ca com", 1)],
   ),
     new RecipeModel(
+      2,
       'Hu tieu',
       'Hu tieu nam vang',
       'https://i.ytimg.com/vi/fziqSn-xkws/maxresdefault.jpg',
@@ -25,6 +27,10 @@ export class RecipeService {
   }
   getRecipes(): RecipeModel[] {
     return this.recipes.slice();
+  }
+
+  getRecipeById(id: number): RecipeModel {
+    return <RecipeModel> this.recipes.find(item => item.id === +id);
   }
 
   addIngredients(ingredients: IngredientModel[]){
