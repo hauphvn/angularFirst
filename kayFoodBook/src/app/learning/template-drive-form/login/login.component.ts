@@ -9,6 +9,7 @@ import {NgForm} from "@angular/forms";
 export class LoginComponent implements OnInit {
   defaultSecret = 'pet';
   answer = '';
+  genders = ['Male', 'Female', 'Other'];
 
   constructor() { }
 
