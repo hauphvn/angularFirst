@@ -35,6 +35,16 @@
       id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
+  <div class="form-group">
+    <label for="secret">Secret question</label>
+    <select
+      [ngModel]="defaultSecret"
+      class="form-control"
+      name="secret" id="secret">
+      <option value="pet">Your first pet?</option>
+      <option value="teacher">Your first teacher?</option>
+    </select>
+  </div>
   <button
     [disabled]="!f.valid"
     type="submit"
