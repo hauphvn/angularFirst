@@ -1,0 +1,39 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input
+      ngModel
+      email
+      required
+      name="email"
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="Enter email">
+    <small class="form-text text-muted">Please enter a valid value!</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input
+      ngModel
+      required
+      name="password"
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button
+    [disabled]="!f.valid"
+    type="submit"
+    class="btn btn-primary">Submit
+  </button>
+</form>
