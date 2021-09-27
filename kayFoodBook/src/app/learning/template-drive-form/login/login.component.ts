@@ -12,13 +12,26 @@ export class LoginComponent implements OnInit {
   answer = '';
   genders = ['Male', 'Female', 'Other'];
   emailSuggest = 'hauphvn@gmail.com';
+  userSubmitted = {
+    email: '',
+    password: '',
+    gender: '',
+    secretQuestion: '',
+    answerSecret: ''
+  }
+  submitted = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    this.submitted = true;
+    this.userSubmitted.email = this.formSignUp?.value.userData.email;
+    this.userSubmitted.password = this.formSignUp?.value.userData.password;
+    this.userSubmitted.gender = this.formSignUp?.value.userData.gender;
+    this.userSubmitted.secretQuestion = this.formSignUp?.value.secret;
+    this.userSubmitted.answerSecret = this.formSignUp?.value.questionAnswer;
   }
 
   onSuggestUsername() {

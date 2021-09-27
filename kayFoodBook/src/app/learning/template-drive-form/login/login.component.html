@@ -1,86 +1,100 @@
-<form (ngSubmit)="onSubmit(f)" #f="ngForm">
-  <div
-    ngModelGroup="userData"
-    #userData="ngModelGroup"
-    id="user-data">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input
-        ngModel
-        email
-        required
-        #email="ngModel"
-        name="email"
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter email">
-      <small
-        *ngIf="!email.valid && email.touched"
-        class="form-text text-muted">Please enter a valid value!
-      </small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input
-        ngModel
-        required
-        name="password"
-        type="password"
-        class="form-control"
-        id="exampleInputPassword1"
-        placeholder="Password">
-    </div>
-    <button
-      (click)="onSuggestUsername()"
-      class="btn btn-info">Suggest a Username
-    </button>
-    <div class="form-group">
+<div class="row">
+  <div class="col-sm-8">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
       <div
-        *ngFor="let gender of genders"
-        class="radio">
-        <label>
+        ngModelGroup="userData"
+        #userData="ngModelGroup"
+        id="user-data">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
           <input
             ngModel
-            [value]="gender"
-            name="gender"
+            email
             required
-            type="radio">
-          {{gender}}</label>
+            #email="ngModel"
+            name="email"
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter email">
+          <small
+            *ngIf="!email.valid && email.touched"
+            class="form-text text-muted">Please enter a valid value!
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            ngModel
+            required
+            name="password"
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Password">
+        </div>
+        <button
+          (click)="onSuggestUsername()"
+          class="btn btn-info">Suggest a Username
+        </button>
+        <div class="form-group">
+          <div
+            *ngFor="let gender of genders"
+            class="radio">
+            <label>
+              <input
+                ngModel
+                [value]="gender"
+                name="gender"
+                required
+                type="radio">
+              {{gender}}</label>
+          </div>
+        </div>
+        <div *ngIf="!userData.valid && userData.touched" role="alert" class="alert alert-danger">
+          User data is invalid!
+        </div>
       </div>
-    </div>
-    <div *ngIf="!userData.valid && userData.touched" role="alert" class="alert alert-danger">
-      User data is invalid!
-    </div>
-  </div>
-  <div class="form-group form-check">
-    <input
-      type="checkbox"
-      class="form-check-input"
-      id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <div class="form-group">
-    <label for="secret">Secret question</label>
-    <select
-      [ngModel]="defaultSecret"
-      class="form-control"
-      name="secret" id="secret">
-      <option value="pet">Your first pet?</option>
-      <option value="teacher">Your first teacher?</option>
-    </select>
-  </div>
-  <div class="form-group">
+      <div class="form-group form-check">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <div class="form-group">
+        <label for="secret">Secret question</label>
+        <select
+          [ngModel]="defaultSecret"
+          class="form-control"
+          name="secret" id="secret">
+          <option value="pet">Your first pet?</option>
+          <option value="teacher">Your first teacher?</option>
+        </select>
+      </div>
+      <div class="form-group">
     <textarea
       [(ngModel)] = answer
       name="questionAnswer"
       class="form-control"
       rows="2"></textarea>
+      </div>
+      <button
+        [disabled]="!f.valid"
+        type="submit"
+        class="btn btn-primary">Submit
+      </button>
+    </form>
+
   </div>
-  <button
-    [disabled]="!f.valid"
-    type="submit"
-    class="btn btn-primary">Submit
-  </button>
-</form>
+  <div class="col-sm-4">
+    <h3>Your submitted: </h3>
+    <div *ngIf="submitted">
+      <p>Email: <span>{{this.userSubmitted.email}}</span></p>
+      <p>Gender:  <span>{{this.userSubmitted.gender}}</span></p>
+      <p>Secret question:  <span>{{this.userSubmitted.secretQuestion}}</span></p>
+      <p>Your answer secret:  <span>{{this.userSubmitted.answerSecret}}</span></p>
+    </div>
+  </div>
+</div>
