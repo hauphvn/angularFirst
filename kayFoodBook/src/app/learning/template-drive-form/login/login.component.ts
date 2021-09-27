@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from "@angular/forms";
 
 @Component({
@@ -7,10 +7,11 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  @ViewChild('f') formSignUp?: NgForm;
   defaultSecret = 'pet';
   answer = '';
   genders = ['Male', 'Female', 'Other'];
-
+  emailSuggest = 'hauphvn@gmail.com';
   constructor() { }
 
   ngOnInit(): void {
@@ -18,5 +19,14 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     console.log(form);
+  }
+
+  onSuggestUsername() {
+    this.formSignUp?.form.patchValue({
+      userData: {
+        email: this.emailSuggest,
+        gender: this.genders[0]
+      }
+    });
   }
 }

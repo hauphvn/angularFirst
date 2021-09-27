@@ -32,6 +32,10 @@
         id="exampleInputPassword1"
         placeholder="Password">
     </div>
+    <button
+      (click)="onSuggestUsername()"
+      class="btn btn-info">Suggest a Username
+    </button>
     <div class="form-group">
       <div
         *ngFor="let gender of genders"
