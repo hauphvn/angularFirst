@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
     this.userSubmitted.gender = this.formSignUp?.value.userData.gender;
     this.userSubmitted.secretQuestion = this.formSignUp?.value.secret;
     this.userSubmitted.answerSecret = this.formSignUp?.value.questionAnswer;
+    this.formSignUp?.reset();
   }
 
   onSuggestUsername() {
