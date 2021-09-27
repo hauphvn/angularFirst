@@ -15,7 +15,8 @@ import {AppRoutingModule} from "./app-routing.module";
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { LoginComponent } from './learning/template-drive-form/login/login.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LoginReactiveComponent } from './learning/reactive-form/login-reactive/login-reactive.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +31,14 @@ import {FormsModule} from "@angular/forms";
     DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
-    LoginComponent
+    LoginComponent,
+    LoginReactiveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule, // for template driven form
+    ReactiveFormsModule //for reactive form
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]
