@@ -1,6 +1,20 @@
 <div class="row">
   <div class="col-sm-8">
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+      <div formArrayName="hobbies">
+        <h2>Hobbies</h2>
+        <button
+          (click)="addHobby()"
+          type="button"
+          class="btn btn-default">+ Add hobbies</button>
+        <div *ngFor="let hobby of hobbies.controls; let i = index">
+          <label for="hobby-{{i}}}">Hobby: </label>
+          <input
+            id="hobby-{{i}}}"
+            formControlName="{{i}}"
+            type="text">
+        </div>
+      </div>
         <div
         formGroupName="userData">
           <div class="form-group">
