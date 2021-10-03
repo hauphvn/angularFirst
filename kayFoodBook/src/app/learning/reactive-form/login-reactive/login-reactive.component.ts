@@ -13,8 +13,10 @@ export class LoginReactiveComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password:  new FormControl('', Validators.required),
+      userData: new FormGroup({
+        email: new FormControl('', [Validators.required, Validators.email]),
+        password:  new FormControl('', Validators.required),
+      }),
       gender: new FormControl('male')
     });
   }
