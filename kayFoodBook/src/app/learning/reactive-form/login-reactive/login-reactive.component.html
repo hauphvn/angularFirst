@@ -27,8 +27,16 @@
               aria-describedby="emailHelp"
               placeholder="Enter email">
             <small
-              *ngIf="!signUpForm.get('userData.email')?.valid"
-              class="help-block">Please enter a valid value!
+              class="help-block">
+              <span *ngIf="!signUpForm.get('userData.email')?.valid">
+                This field invalid!
+              </span>
+              <span *ngIf="signUpForm.get('userData.email')?.errors?.required">
+                  This field required!
+              </span>
+              <span *ngIf="signUpForm.get('userData.email')?.errors?.emailIsForbidden">
+                This email is forbidden
+              </span>
             </small>
           </div>
           <div class="form-group">
