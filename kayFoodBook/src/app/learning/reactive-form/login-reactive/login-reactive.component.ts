@@ -9,12 +9,16 @@ import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 export class LoginReactiveComponent implements OnInit {
   signUpForm!: FormGroup;
   genders = ['male','female', 'others'];
+  forbiddenEmail = ['hau1@gmail.com', 'hau2@gmail.com'];
   constructor() { }
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
       userData: new FormGroup({
-        email: new FormControl('', [Validators.required, Validators.email]),
+        email: new FormControl('', [
+          Validators.required,
+          Validators.email,
+        this.onForbiddenEmail.bind(this)]),
         password:  new FormControl('', Validators.required),
       }),
       gender: new FormControl('male'),
@@ -33,5 +37,12 @@ export class LoginReactiveComponent implements OnInit {
   addHobby() {
     const control = new FormControl('', Validators.required);
     (<FormArray>this.signUpForm.get('hobbies')).push(control);
+  }
+
+  onForbiddenEmail(control: FormControl): { [p: string]: boolean } | null {
+    if(this.forbiddenEmail.indexOf(control.value) !== -1){
+      return {'emailIsForbidden' : true};
+    }
+    return null;
   }
 }
