@@ -1,0 +1,31 @@
+<div id="login-demo" class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>User form</h3>
+      <small>A simple reactive form with validation</small>
+      <form [formGroup]="userForm">
+        <label for="name"><strong>Name</strong></label>
+        <input
+          formControlName="name"
+          type="text"
+          id="name"
+          placeholder="Your name">
+        <label for="email"><strong>Email</strong></label>
+        <input
+          formControlName="email"
+          type="email"
+          id="email"
+          placeholder="Your email">
+        <div *ngIf="validForm" class="wrap-error-warning">
+          <small *ngIf="name!.errors" class="text-alert">{{name!.getError('requiredValue')}}</small>
+          <small *ngIf="email!.errors" class="text-alert">{{email!.getError('requiredValue')}}</small>
+        </div>
+        <button (click)="onSubmit()" class="btn btn-success">Save</button>
+      </form>
+    </div>
+    <div class="col-sm-6">
+      <h3>Your submit</h3>
+      <p>{{yourSubmit}}</p>
+    </div>
+  </div>
+</div>

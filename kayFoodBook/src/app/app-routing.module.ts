@@ -7,6 +7,7 @@ import {RecipeDetailComponent} from "./recipes/recipe-detail/recipe-detail.compo
 import {RecipeEditComponent} from "./recipes/recipe-edit/recipe-edit.component";
 import {LoginComponent} from "./learning/template-drive-form/login/login.component";
 import {LoginReactiveComponent} from "./learning/reactive-form/login-reactive/login-reactive.component";
+import {LoginDemoComponent} from "./login/login-demo.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/recipes', pathMatch: 'full'},
@@ -18,7 +19,8 @@ const routes: Routes = [
     ]},
   {path: 'shopping-list', component: ShoppingListComponent},
   {path:'template-form', component: LoginComponent},
-  {path:'reactive-form', component: LoginReactiveComponent}
+  {path:'reactive-form', component: LoginReactiveComponent},
+  {path:'login-form', component: LoginDemoComponent}
 ];
 
 @NgModule({

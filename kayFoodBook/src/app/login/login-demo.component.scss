@@ -1,0 +1,25 @@
+@import '../../assets/scss/variables';
+
+#login-demo {
+  h3 {
+    text: {
+      align: center;
+    }
+  }
+  form {
+    input, button {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 9px;
+    }
+  }
+
+  .text-alert {
+    font: {
+      size: smaller;
+    }
+    color: $color-text-alert;
+    display: block;
+  }
+}

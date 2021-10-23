@@ -17,6 +17,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { LoginComponent } from './learning/template-drive-form/login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LoginReactiveComponent } from './learning/reactive-form/login-reactive/login-reactive.component';
+import { LoginDemoComponent } from './login/login-demo.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LoginReactiveComponent } from './learning/reactive-form/login-reactive/
     RecipeStartComponent,
     RecipeEditComponent,
     LoginComponent,
-    LoginReactiveComponent
+    LoginReactiveComponent,
+    LoginDemoComponent
   ],
   imports: [
     BrowserModule,
