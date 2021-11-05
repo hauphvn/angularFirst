@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {nameError, pwError} from "../shared/validation/custom-email.validator";
+import {nameError, emailError, pwError} from "../shared/validation/custom-email.validator";
 
 @Component({
   selector: 'app-login-demo',
@@ -23,13 +23,18 @@ export class LoginDemoComponent implements OnInit {
   private createForm() {
     this.userForm = this.formBuilder.group({
       name: ['', [Validators.required], nameError],
-      email:['', [Validators.required, Validators.email], pwError]
+      email:['', [Validators.required, Validators.email], emailError],
+      password:['',null, pwError]
     });
   }
 
   onSubmit(){
     this.yourSubmit = JSON.stringify(this.userForm.value);
     console.log(this.userForm)
+  }
+
+  get password() {
+    return this.userForm.get('password');
   }
 
   get name() {

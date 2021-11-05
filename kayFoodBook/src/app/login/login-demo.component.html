@@ -16,9 +16,17 @@
           type="email"
           id="email"
           placeholder="Your email">
+        <label for="password">Password <small class="text-secondary">(Checking validator via a web server)</small></label>
+        <input
+          formControlName="password"
+          type="password"
+          id="password"
+          placeholder="Your password">
+
         <div *ngIf="validForm" class="wrap-error-warning">
           <small *ngIf="name!.errors" class="text-alert">{{name!.getError('requiredValue')}}</small>
           <small *ngIf="email!.errors" class="text-alert">{{email!.getError('requiredValue')}}</small>
+          <small *ngIf="password!.errors" class="text-alert">{{password!.getError('requiredValue')}}</small>
         </div>
         <button (click)="onSubmit()" class="btn btn-success">Save</button>
       </form>
