@@ -38,6 +38,7 @@ import { LoginDemoComponent } from './login/login-demo.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule, // for template driven form
     ReactiveFormsModule //for reactive form
