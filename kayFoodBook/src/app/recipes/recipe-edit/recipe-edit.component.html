@@ -37,18 +37,22 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-8">
-    <input
-      class="form-control"
-      type="text">
+<div class="col-xs-12" formArrayName="ingredients">
+  <div class="row" *ngFor="let ingredientCtrl of recipeEditForm as FormArray">
+    <div class="col-xs-8">
+      <input
+        class="form-control"
+        type="text">
+    </div>
+    <div class="col-xs-2">
+      <input
+        class="form-control"
+        type="number">
+    </div>
+    <div class="col-xs-2">
+      <button style="margin: 0;" class="btn btn-danger">X</button>
+    </div>
   </div>
-  <div class="col-xs-2">
-    <input
-      class="form-control"
-      type="number">
-  </div>
-  <div class="col-xs-2">
-    <button style="margin: 0;" class="btn btn-danger">X</button>
-  </div>
+</div>
 </div>
 
